@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "node js backend with swagger",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run dev",
+    "devStart": "nodemon serve",
+    "start": "nodemon server.js"
+  },
+  "author": "Samiran Ghosh",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0",
+    "uuid": "^9.0.0"
+  }
+}
