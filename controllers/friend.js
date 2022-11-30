@@ -10,6 +10,7 @@ async function sendFriendRequest(req,res) {
     try {
 
         const { id,firstName } = req.user
+        
 
         return res.status(201).json({ status: 'ok',statusCode:"201", message: `${firstName} sent you a friend request` })
     } catch (err) {
