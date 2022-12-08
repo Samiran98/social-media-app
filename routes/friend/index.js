@@ -1,9 +1,11 @@
 const express = require("express")
 const friendController = require("../../controllers/friend")
+const { validate } = require('../../middleware/validationMiddleware')
+const friendValidation = require('../../validations/friend')
 
 var router = express.Router();
 
-router.post('/send-friend-request', friendController.sendFriendRequest);
+router.post('/send-friend-request',validate(friendValidation.friendRequest), friendController.sendFriendRequest);
 
 module.exports = router
 
@@ -17,15 +19,22 @@ module.exports = router
 *     description: Send friend request to a friend
 *     tags: ['Friend']
 *     requestBody:
-*       required: true
+*       required: false
 *       content:
 *         application/json:
 *           schema:
 *             type: object
 *             properties:
-*               friendsUserId:
-*                 type: integer
-*                 description: The friend's id.
+*               notes:
+*                 type: string
+*                 required: false
+*     parameters:
+*        - name: friendUserId
+*          in: query
+*          description: ID of friend to send request
+*          required: true
+*          schema:
+*            type: integer
 *     responses:
 *       200:
 *         description: Created Successfully

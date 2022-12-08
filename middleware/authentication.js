@@ -7,7 +7,7 @@ const apiAuth = async (req, res, next) => {
   // console.log(req.headers['authorization']);
   if (!(req.headers && req.headers['authorization'])) {
     // return errorResponse(req, res, 'Token is not provided', 401);
-    return res.status(401).json({ status: 'error',statusCode:"401", message: 'Invalid Authorization' })
+    return res.status(401).json({ status: 'Authorization Error',statusCode:"401", message: 'Invalid Authorization' })
   }
   const token = req.headers['authorization'].split(' ')[1];
   console.log(token);
